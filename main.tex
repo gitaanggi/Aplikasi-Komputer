@@ -1,0 +1,78 @@
+\documentclass[12pt,times new roman,a4paper]{book}
+\linespread{1.5}
+\usepackage{eumat}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+ {\large\bfseries\centering}
+ {\chaptertitlename\ \thechapter}{12pt}{\huge}
+\renewcommand{\chaptername}{BAB}
+\pagestyle{plain}
+\renewcommand{\contentsname}{Daftar Isi}
+
+\begin{document}
+\clearpage
+\thispagestyle{empty}
+\frontmatter
+\begin{center}
+    \large{\textbf{KEGIATAN BELAJAR MENGGUNAKAN LATEX DAN MARKDOWN UNTUK PENGOLAHAN DOKUMEN}}
+    
+    \vspace{2cm}
+
+    \large{\textbf{APLIKASI KOMPUTER}}
+\end{center}
+\vspace{3cm}
+\begin{minipage}{17cm}
+    \begin{center}
+          \includegraphics[width=6cm]{images/UNY.png}
+    \end{center}
+\end{minipage}
+
+\vspace{3cm}
+
+\begin{center}
+    \large{Oleh: \\ Gita Anggi Nurlita \\ 22305141004}
+\end{center}
+
+\vspace{3cm}
+\begin{center}
+    \large{\textbf{PROGRAM STUDI MATEMATIKA}} \\
+    \large{\textbf{FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM}} \\
+    \large{\textbf{UNIVERSITAS NEGERI YOGYAKARTA}} \\
+    \large{\textbf{2023}}
+\end{center}
+
+\clearpage
+\thispagestyle{empty}
+\tableofcontents
+\mainmatter
+
+
+\begin{eulernotebook}
+    \chapter{FIRST STEPS}
+    \input{1_EMT00-FisrtSteps-Gita Anggi Nurlita}
+
+    \chapter{ALJABAR}
+    \input{2_EMT4aljabar_Gita Anggi Nurlita_22305141004}
+
+    \input{2_EMT4aljabar_Persamaan}
+
+    \input{2_EMT4aljabar_Masalah Sehari-Hari}
+
+    \chapter{PLOT 2D}
+    \input{3_EMT4Plot2D_Gita Anggi Nurlita_22305141004}
+
+    \chapter{PLOT 3D}
+    \input{4_EMT4Plot3D_Gita Anggi Nurlita_22305141004}
+
+    \chapter{KALKULUS}
+    \input{5_EMT4Kalkulus_Gita Anggi Nurlita_22305141004}
+
+    \chapter{GEOMETRI}
+    \input{6_EMT4Geometry_Gita Anggi Nurlita_22305141004}
+
+    \chapter{STATISTIKA}
+    \input{7_EMT4Statistika_Gita Anggi Nurlita_22305141004}
+\end{eulernotebook}
+\end{document}

@@ -1,0 +1,68 @@
+﻿% * Aljabar untuk Menyelesaikan Masalah Sehari-Hari
+% 
+% ** Contoh Soal
+% 
+% Favorite Pets. Americans own a total of about 355 million fish, cats,
+% and dogs as pets. The number of fish owned is 11 million more than the
+% total number of cats and dogs owned, and 16 million more cats are
+% owned than dogs.
+%% (Source: American Pet Products Manufacturers Association)
+%% How many of each type of pet do Americans own?
+% 
+% Penyelesaian :
+% 
+% Dari soal kita dapat ketahui
+% 
+% latex: f+c+d = 355
+% %image% Aljabar_8_Menyelesaikan Masalah Sehari-Hari-001.png
+% // latex: f+c+d = 355
+%% latex: f = c+d+11
+% %image% Aljabar_8_Menyelesaikan Masalah Sehari-Hari-002.png
+% // latex: f = c+d+11
+%% latex: c = d+16
+% %image% Aljabar_8_Menyelesaikan Masalah Sehari-Hari-003.png
+% // latex: c = d+16
+% 
+% Sehingga
+>p1 &= f+c+d=355; p2 &= f=c+d+11; p3 &= c=d+16; $&p1, $&p2, $&p3
+ %image% Aljabar_8_Menyelesaikan Masalah Sehari-Hari-004.png
+% // latex: f+d+c=355
+ %image% Aljabar_8_Menyelesaikan Masalah Sehari-Hari-005.png
+% // latex: f=d+c+11
+ %image% Aljabar_8_Menyelesaikan Masalah Sehari-Hari-006.png
+% // latex: c=d+16
+>sol &= solve([p1,p2,p3], [f,c,d]); $&sol
+ %image% Aljabar_8_Menyelesaikan Masalah Sehari-Hari-007.png
+% // latex: \left[ \left[ f=183 , c=94 , d=78 \right]  \right] 
+>$&subst(sol,p1), $&subst(sol,p2), $&subst(sol,p3)
+ %image% Aljabar_8_Menyelesaikan Masalah Sehari-Hari-008.png
+% // latex: 355=355
+ %image% Aljabar_8_Menyelesaikan Masalah Sehari-Hari-009.png
+% // latex: 183=183
+ %image% Aljabar_8_Menyelesaikan Masalah Sehari-Hari-010.png
+% // latex: 94=94
+>A = [1,1,1; 1,-1,-1; 0,1,-1]
+            1             1             1 
+            1            -1            -1 
+            0             1            -1 
+>b = [355;11;16]
+          355 
+           11 
+           16 
+>M = A|b
+            1             1             1           355 
+            1            -1            -1            11 
+            0             1            -1            16 
+>echelon(M)
+            1             0             0           183 
+            0             1             0            94 
+            0             0             1            78 
+>x = inv(A).b
+          183 
+           94 
+           78 
+% 
+% Jadi, orang Amerika memiliki 183 juta ikan, 94 juta kucing, dan 78
+% juta anjing sebagai hewan peliharaan.
+>                  
+>

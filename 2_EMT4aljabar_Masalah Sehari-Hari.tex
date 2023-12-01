@@ -1,0 +1,126 @@
+
+\begin{eulernotebook}
+
+\eulerheading{Aljabar untuk Menyelesaikan Masalah Sehari-Hari }
+
+\eulersubheading{Contoh Soal}
+
+\begin{eulercomment}
+Favorite Pets. Americans own a total of about 355 million fish, cats, and dogs as pets. The number of fish owned is 11 million more than the total number of cats and dogs owned, and 16 million more cats are owned than dogs.\\
+(Source: American Pet Products Manufacturers Association)\\
+How many of each type of pet do Americans own?
+
+Penyelesaian :
+
+Dari soal kita dapat ketahui
+
+\end{eulercomment}
+\begin{eulerformula}
+\[
+f+c+d = 355
+\]
+\end{eulerformula}
+\begin{eulerformula}
+\[
+f = c+d+11
+\]
+\end{eulerformula}
+\begin{eulerformula}
+\[
+c = d+16
+\]
+\end{eulerformula}
+\begin{eulercomment}
+Sehingga
+\end{eulercomment}
+\begin{eulerprompt}
+>p1 &= f+c+d=355; p2 &= f=c+d+11; p3 &= c=d+16; $&p1, $&p2, $&p3
+\end{eulerprompt}
+\begin{eulerformula}
+\[
+f+d+c=355
+\]
+\end{eulerformula}
+\begin{eulerformula}
+\[
+f=d+c+11
+\]
+\end{eulerformula}
+\begin{eulerformula}
+\[
+c=d+16
+\]
+\end{eulerformula}
+\begin{eulerprompt}
+>sol &= solve([p1,p2,p3], [f,c,d]); $&sol
+\end{eulerprompt}
+\begin{eulerformula}
+\[
+\left[ \left[ f=183 , c=94 , d=78 \right]  \right] 
+\]
+\end{eulerformula}
+\begin{eulerprompt}
+>$&subst(sol,p1), $&subst(sol,p2), $&subst(sol,p3)
+\end{eulerprompt}
+\begin{eulerformula}
+\[
+355=355
+\]
+\end{eulerformula}
+\begin{eulerformula}
+\[
+183=183
+\]
+\end{eulerformula}
+\begin{eulerformula}
+\[
+94=94
+\]
+\end{eulerformula}
+\begin{eulerprompt}
+>A = [1,1,1; 1,-1,-1; 0,1,-1]
+\end{eulerprompt}
+\begin{euleroutput}
+              1             1             1 
+              1            -1            -1 
+              0             1            -1 
+\end{euleroutput}
+\begin{eulerprompt}
+>b = [355;11;16]
+\end{eulerprompt}
+\begin{euleroutput}
+            355 
+             11 
+             16 
+\end{euleroutput}
+\begin{eulerprompt}
+>M = A|b
+\end{eulerprompt}
+\begin{euleroutput}
+              1             1             1           355 
+              1            -1            -1            11 
+              0             1            -1            16 
+\end{euleroutput}
+\begin{eulerprompt}
+>echelon(M)
+\end{eulerprompt}
+\begin{euleroutput}
+              1             0             0           183 
+              0             1             0            94 
+              0             0             1            78 
+\end{euleroutput}
+\begin{eulerprompt}
+>x = inv(A).b
+\end{eulerprompt}
+\begin{euleroutput}
+            183 
+             94 
+             78 
+\end{euleroutput}
+\begin{eulercomment}
+Jadi, orang Amerika memiliki 183 juta ikan, 94 juta kucing, dan 78
+juta anjing sebagai hewan peliharaan.
+\end{eulercomment}
+
+\end{eulernotebook}
+
